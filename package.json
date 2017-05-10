@@ -1,23 +1,21 @@
 {
-  "name": "reveal.js",
+  "name": "Git ppt",
   "version": "3.5.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
-  "subdomain": "revealjs",
-  "main": "js/reveal.js",
+  "description": "Introduction to Git and Git workflow",
+  "homepage": "http://achyutdev.me/ppt-on-git",
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
     "build": "grunt"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Achyut Dev",
+    "email": "achyut.dev@gmail.com",
+    "web": "http://achyutdev.me/"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "url": "git@github.com:achyutdev/ppt-on-git.git"
   },
   "engines": {
     "node": ">=4.0.0"
