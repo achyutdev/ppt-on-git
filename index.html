@@ -92,6 +92,22 @@
     // - https://github.com/hakimel/reveal.js#configuration
     // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        // Parallax background image
+        parallaxBackgroundImage: 'http://achyutdev.me/ppt-on-git/lib/2.jpg',
+        // Parallax background size
+        parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+
+        // Number of pixels to move the parallax background per slide
+        // - Calculated automatically unless specified
+        // - Set to 0 to disable movement along an axis
+        //parallaxBackgroundHorizontal: 200,
+        //parallaxBackgroundVertical: 50,
         dependencies: [
             {src: 'plugin/markdown/marked.js'},
             {src: 'plugin/markdown/markdown.js'},
