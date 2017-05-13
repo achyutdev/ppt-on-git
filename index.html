@@ -24,15 +24,94 @@
 <body>
 <div class="reveal">
     <div class="slides">
-        <section>
-            <h2>Git</h2>
-            <h3>&</h3>
-            <h2>Git work-flow</h2>
+
+
+        <!--Cover Slide-->
+        <section id="cover">
+            <section id="coverPage1">
+                <h1>Introduction to</h1>
+                <h3>Git and Git workflow practices</h3>
+                <img src="lib/logo.png">
+                <p>
+                    <small>- <a href="http://achyutdevkota.com.np">Achyut Dev</a> / <a
+                            href="http://twitter.com/achyutdev">@achyutdev</a></small>
+                </p>
+            </section>
+            <section id="coverPage2">
+                <h3>Outline</h3>
+                <ul>
+                    <li><a href="#introduction">Basic Introduction </a></li>
+                    <li><a href="#">How git works?</a></li>
+                    <li><a href="#slide2">Best Git workflow</a></li>
+                    <li><a href="#slide2">Demos</a></li>
+                </ul>
+            </section>
         </section>
-        <section data-background-transition="zoom">Slide 2</section>
+
+        <!--Introduction-->
+        <section id="introduction">
+            <section>
+                <h3>Introduction</h3>
+                <ul>
+                    <p>Git is a Distributed Version Control System.</p>
+                    <p>Created by Linus Torvalds, founder of linux kernel.</p>
+                    <p>Reliable branching and merging.</p>
+                    <p>Git stores full local history.</p>
+                </ul>
+            </section>
+            <section data-background="#C5FAFE">
+                <h3>Code Hosting sites</h3>
+                <img src="lib/hostingsites.png">
+            </section>
+        </section>
+
+        <!-- work-->
+        <section>
+            <section>
+                <h3>How it works?</h3>
+                <p>Create repository</p>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$ git init .
+Initialized empty Git repository in /achyutdev/projects/Demo/.git/
+                </code></pre>
+                <p>Clone repository</p>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git clone git@github.com:achyutdev/ppt-on-git.git
+                </code></pre>
+            </section>
+            <section data-transition="fade">
+                <h4>Git Four Areas</h4>
+                <img src="lib/img.png">
+            </section>
+            <section data-transition="fade">
+                <h4>Git Four Areas</h4>
+                <img src="lib/gitfolder.png">
+            </section>
+            <section>
+                <h4>Git Four Areas</h4>
+                <p>Move code change from left to right</p>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$ git add .
+#Code changes move to staging area
+$ git commit -m "New changes are added"
+#Code changes move to repository with a new commit
+                </code></pre>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$ git diff
+#compare code change between working area and staging area
+$ git diff --cached
+#compare code change between staging area and repository
+                </code></pre>
+            </section>
+            <section>
+                <h4>Repository</h4>
+                <img src="lib/commit_branch.png">
+            </section>
+
+        </section>
 
         <!--list fragment-->
-        <section>
+        <section id="slide2">
             <section id="fragments">
                 <h2>Fragments</h2>
                 <p>Hit the next arrow...</p>
@@ -99,15 +178,15 @@
         transition: 'slide', // none/fade/slide/convex/concave/zoom
         // More info https://github.com/hakimel/reveal.js#dependencies
         // Parallax background image
-        parallaxBackgroundImage: 'http://achyutdev.me/ppt-on-git/lib/background.jpg',
+        parallaxBackgroundImage: 'lib/background.jpg',
         // Parallax background size
-        parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
+        parallaxBackgroundSize: '2100px 950px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
 
         // Number of pixels to move the parallax background per slide
         // - Calculated automatically unless specified
         // - Set to 0 to disable movement along an axis
-        //parallaxBackgroundHorizontal: 200,
-        //parallaxBackgroundVertical: 50,
+        parallaxBackgroundHorizontal: 50,
+        parallaxBackgroundVertical: 0,
         dependencies: [
             {src: 'plugin/markdown/marked.js'},
             {src: 'plugin/markdown/markdown.js'},
