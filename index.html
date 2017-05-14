@@ -159,6 +159,179 @@ $git stash list
             </section>
         </section>
 
+        <!--Git configuration-->
+        <section>
+            <section data-transition="fade" data-background="#2d7e65">
+                <h2>Configuring Git</h2>
+                <ul>
+                    <li> System-level configuration
+                        <ul style="font-size: 24px">
+                            <li>git config --system</li>
+                            <li>Stored in /etc/gitconfig or c:\Program Files (x86)\Git\etc\gitconfig</li>
+                        </ul>
+                    </li>
+                    <li> User-level configuration
+                        <ul style="font-size: 24px">
+                            <li>git config --global</li>
+                            <li>Stored in ~/.gitconfig or c:\Users\< NAME >\.gitconfig</li>
+                        </ul>
+                    </li>
+                    <li> Repository-level configuration
+                        <ul style="font-size: 24px">
+                            <li>git config</li>
+                            <li>Stored in .git/config in each repo</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section data-transition="fade">
+                <h2>Configuring Git</h2>
+                <p>Example of git config </p>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git config --global --list
+$git config --global user.name "Achyut Dev"
+$git config --global user.email "achyut.dev@gmail.com"
+$git config --global alias.lga log --graph --oneline --decorate
+# more ...
+                </code></pre>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h3>Team Collaboration</h3>
+                <div style="font-size: 24px">
+                    <img src="lib/collaboration.png">
+                    <p>Developer has own copy of the complete repo with local history with branches.</p>
+                    <p>Instead of committing a changeset from a working copy to central repo, Git gives to share entire branches between repository.</p>
+                </div>
+            </section>
+            <section>
+                <h5>Git Remote</h5>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git remote add origin git@github.com:achyutdev/ppt-on-git.git
+$git remote -v
+                </code></pre>
+                <div style="font-size: 24px">
+                    <p>Remote connection is like bookmark( e.g. origin )</p>
+                    <p>Git reference to remote repo mainly two ways - HTTP and SSH</p>
+                </div>
+            </section>
+
+            <section>
+                <h5>Git fetch</h5>
+                <div style="font-size: 28px">
+                        imports commits from remote repo into local repo<br>
+                       imports commits are stored on remote branches<br>
+                        working code do not change
+                </div>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git fetch
+#Download all the branches and commits from remote
+$git fetch origin myNewBranch
+#update commits from myNewBranch branch
+                </code></pre>
+                <div style="font-size: 28px">
+                    only get those change in working area if we merge to local branch
+                    <p>`Sync` operation in SVN</p>
+                </div>
+            </section>
+
+            <section>
+                <h5>Git pull</h5>
+                <div style="font-size: 28px">
+                    git fetch + git merge = git pull <br>
+                </div>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git pull origin
+#pull the commit from remote repo and merge with local
+$git pull --rebase origin
+#put local change on the top
+                </code></pre>
+                <div style="font-size: 28px">
+                    rebase is use to ensure a linear history by preventing unnecessary merge commit<br>
+                    rebase is - " I want to put my changes on top of what everybody else has done<br>
+                    SVN Update
+                </div>
+            </section>
+
+            <section>
+                <h5>Git push</h5>
+                <div style="font-size: 28px">
+                    transfer commits from local repo to remote repo <br>
+                </div>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git push < remote> < branch>
+$git push --force  origin master(don't use this)
+#force push replace commits with local commit
+$git push origin < tag>
+#usually use for release  number.
+                </code></pre>
+                <div style="font-size: 28px">
+                   Git prevent from overriding commits in remote repo
+                </div>
+            </section>
+
+            <section>
+                <h5>Standard Methods</h5>
+               <ul style="font-size: 28px">
+                   <li>make sure local branch is up-to-date</li>
+                   <li>clean up commits - interactive rebase is good option</li>
+                   <li>share commit - push</li>
+               </ul>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git fetch < remote> < branch>
+#git pull is another option
+$git rebase -i < remote/branch>
+#edit commit history - squash commit, fix up commit ..
+$git push < remote> < branch>
+                </code></pre>
+                <div style="font-size: 28px">
+                    create pull request and merge to stable branch<br>
+                    Not for centralized workflow
+                </div>
+            </section>
+
+        </section>
+
+        <!--branching-->
+        <section>
+            <section>
+                <h5>Git branch</h5>
+                <div style="font-size: 28px">
+                    git branches are not like SVN branches <br>
+                    branch is just reference to commit & represent tip of a series of commit.
+                </div>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git branch < branchName>
+                </code></pre>
+                <img src="lib/commits.png">
+                <div style="font-size: 28px">
+                   creating new branch encapsulate current changes<br>
+                    can delete branch without losing history after merge is done
+                </div>
+            </section>
+            <section>
+                <h5>Git Checkout</h5>
+                <div style="font-size: 28px">
+                    switch between branch and commits <br>
+                    checkout update source code in working area
+                </div>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git checkout < existing branch/commit>
+#switch to branch or commit
+$git checkout -b < new-branch>
+#create new branch and switch to that branch
+                </code></pre>
+                <div style="font-size: 28px">
+                    checkout can update the HEAD to point to either the specific commit or branch<br>
+                    which is called "detached HEAD" state - handle with care
+
+                </div>
+            </section>
+        </section>
+
         <!--list fragment-->
         <section id="slide2">
             <section id="fragments">
