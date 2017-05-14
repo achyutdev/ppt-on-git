@@ -103,11 +103,60 @@ $ git diff --cached
 #compare code change between staging area and repository
                 </code></pre>
             </section>
+
+            <section>
+                <h4>Git Four Areas</h4>
+                <p>Move code change from right to left</p>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git rm --cached
+## remove indexed file
+## do not use git  rm
+$git reset <--option> < HEAD/Commit number>
+                </code></pre>
+                <p style="font-size: 24px">--hard: copy commit file to working area and index</p>
+                <p style="font-size: 24px">--mixed:copy commit file to index only</p>
+                <p style="font-size: 24px">--soft: Does not touch the index file or the working file</p>
+            </section>
+
             <section>
                 <h4>Repository</h4>
                 <img src="lib/commit_branch.png">
             </section>
 
+            <section data-transition="fade">
+                <h4>Stash</h4>
+                <p>Stash the changes in a dirty working directory away</p>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+# file.txt is change and added to index
+$git add file.txt
+# folder's file are just edited
+# we require working tree clean without removing current changes
+                </code></pre>
+                <img src="lib/stash.png">
+            </section>
+            <section data-transition="fade">
+                <h4>Stash</h4>
+                <p>Stash the changes in a dirty working directory away</p>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git stash --include-untracked
+$git status
+# nothing to commit, working tree clean
+# it saves current changes including indexed to stash
+                </code></pre>
+                <img src="lib/stash1.png">
+            </section>
+
+            <section data-transition="fade">
+                <h4>Stash</h4>
+                <p>Stash the changes in a dirty working directory away</p>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git stash apply
+$git stash clear
+$git stash list
+# git stash pop - apply stashed changes and clear.
+                </code></pre>
+                <img src="lib/stash3.png">
+            </section>
         </section>
 
         <!--list fragment-->
