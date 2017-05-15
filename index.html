@@ -116,6 +116,10 @@ $git reset <--option> < HEAD/Commit number>
                 <p style="font-size: 24px">--hard: copy commit file to working area and index</p>
                 <p style="font-size: 24px">--mixed:copy commit file to index only</p>
                 <p style="font-size: 24px">--soft: Does not touch the index file or the working file</p>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git revert < commit>
+                </code></pre>
+                <p style="font-size: 24px">add new commit which is opposite than last <br>revert does not mean "undo"</p>
             </section>
 
             <section>
@@ -366,6 +370,29 @@ $git commit -m "branch is merge to master"
                     and doing fast forward merge
                 </div>
             </section>
+            <section>
+                <h5>Exploring History</h5>
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git log --graph --decorate --oneline
+$git show < commit> (or branch or HEAD)
+$git show HEAD^^ ( or HEAD~2)
+$git blame file.txt
+$git diff HEAD HEAD~2
+$git log --grep text --oneline
+$git log branch..master --oneline
+$git reflog
+                </code></pre>
+                <div style="font-size: 28px">
+                    git help to see details
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Git Workflows</h2>
+            </section>
+
         </section>
 
         <!--list fragment-->
