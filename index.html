@@ -389,10 +389,13 @@ $git reflog
             </section>
         </section>
 
+  
         <section>
             <section>
-                <h2>Git Workflows</h2>
-                <p>common practices - not good or bad</p>
+                <h2>Git Work-flow</h2>
+                <p style="font-size: 28px;">common practices - not good or bad</p>
+                <p style="font-size: 28px;">depend on project structure</p>
+
             </section>
             <section>
                 <h2>Branching Models</h2>
@@ -404,44 +407,64 @@ $git reflog
                     <li>hot-fix branch</li>
                 </ul>
             </section>
+            <section data-background="#C5FAFE" data-background-transition="zoom" >
+            <img src="lib/branchmodel.png">
+        </section>
             <section>
-                <h2>centralized workflow</h2>
-                <div style="font-size: 38px">
-                    some how like SVN<br> central repo to serve as the single point of entry for all changes to the project<br></div>
+                <img src="lib/gitflow_branch_model.png">
             </section>
-            <section>
-                <h2>centralized workflow</h2>
-                <div style="font-size: 38px">
-                    some how like SVN<br> central repo to serve as the single point of entry for all changes to the project<br></div>
+            <section data-background="#C5FAFE">
+                <h4>centralized workflow</h4>
+                <div style="font-size: 30px">
+                    <img src="lib/centralized_flow.png">
+                    <div>
+                        some how like SVN<br> central repo to serve as the single point of entry for all changes to the project<br></div>
+                </div>
             </section>
+            <section data-background="#C5FAFE">
+                <h4>Working on centralized workflow</h4>
+                <div style="font-size: 30px">
+                    - clone central repo<br>
+                    - edit and commit changes<br>
+                    - new commit are store locally<br>
+                    - push local branch commit to remote branch <br>
+                    - conflicts/direct conflicts : does not give dev to override the official remote commit <br>
+                    - solution fetch - rebase and push <br>
+                </div>
+            </section>
+
+            <section data-background="#C5FAFE">
+                <h4>Feature Branch workflow</h4>
+                <div style="font-size: 30px">
+                    <img src="lib/centralized_flow.png">
+                    <div>
+                        each feature is develop in dedicated branch<br>  easy for multiple developers to work on a particular feature without disturbing the main codebase<br>
+                        means the master branch will never contain broken code
+                    </div>
+                </div>
+            </section>
+            <section data-background="#C5FAFE">
+                <h4>Working on Feature Branch workflow</h4>
+                <div style="font-size: 30px">
+                <pre><code class="bash" style="font-size: 18px; box-shadow:none">
+$git checkout -b marys-feature master
+$git status
+$git add < some-file>
+$git commit
+$git push -u origin marys-feature
+                </code></pre>
+                    <div>
+                        create pull request <br>
+                        merge to master/stable branch
+                    </div>
+                </div>
+            </section>
+
 
         </section>
-
-        <!--list fragment-->
-        <section id="slide2">
-            <section id="fragments">
-                <h2>Fragments</h2>
-                <p>Hit the next arrow...</p>
-                <p class="fragment">... to step through ...</p>
-                <p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span>
-                </p>
-
-                <aside class="notes">
-                    This slide has fragments which are also stepped through in the notes window.
-                </aside>
-            </section>
-            <section data-background-transition="zoom">
-                <h2>Fragment Styles</h2>
-                <p>There's different types of fragments, like:</p>
-                <p class="fragment grow">grow</p>
-                <p class="fragment shrink">shrink</p>
-                <p class="fragment fade-out">fade-out</p>
-                <p class="fragment fade-up">fade-up (also down, left and right!)</p>
-                <p class="fragment current-visible">current-visible</p>
-                <p>Highlight <span class="fragment highlight-red">red</span> <span
-                        class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span>
-                </p>
-            </section>
+        <section>
+            <h3>Thank you !</h3>
+            Any questions ?
         </section>
 
     </div>
